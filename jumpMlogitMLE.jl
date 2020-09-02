@@ -24,7 +24,7 @@ function jumpMlogitMLE()
 	@NLobjective(myMLE,Min, -sum(
 									sum( (Y[i]==j)*(sum( X[i,k]*(bx[k,j]) for k=1:K1) +
 									sum( (Z[i,k,j]-Z[i,k,baseAlt])*bz[k] for k=1:K2) ) for j=1:J) -
-									log.( sum( exp.( sum( X[i,k]*(bx[k,j]) for k=1:K1) +
+									log( sum( exp( sum( X[i,k]*(bx[k,j]) for k=1:K1) +
 									sum( (Z[i,k,j]-Z[i,k,baseAlt])*bz[k] for k=1:K2)  ) for j=1:J) )
 							for i=1:n)
 				)
