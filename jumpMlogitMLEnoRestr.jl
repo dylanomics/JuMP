@@ -25,7 +25,7 @@ function jumpMlogitMLEnoRestr()
 	@NLobjective(myMLE,Max, sum(
 								sum( (Y[i]==j)*( sum( X[i,k]*(bx[k,j]) for k=1:K1) +
 								sum( (Z[i,k,j]-Z[i,k,baseAlt])*bz[k] for k=1:K2) ) for j=1:J if j!=baseAlt) -
-								log.( 1 + sum( exp.( sum( X[i,k]*(bx[k,j]) for k=1:K1) +
+								log( 1 + sum( exp( sum( X[i,k]*(bx[k,j]) for k=1:K1) +
 								sum( (Z[i,k,j]-Z[i,k,baseAlt])*bz[k] for k=1:K2)  ) for j=1:J if j!=baseAlt) )
 							for i=1:n)
 				)
